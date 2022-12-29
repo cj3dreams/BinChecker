@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="26dp"
     tools:context=".view.ui.MainFragment">
 
     <com.google.android.material.textfield.TextInputLayout
+
+        android:layout_above="@+id/mainBinContinueBtn"
         android:id="@+id/mainBinTextInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
@@ -25,17 +28,17 @@
             android:digits="0123456789"
             android:hint="Введите BIN код"
             android:inputType="numberDecimal"
-            android:maxLength="6"
+            android:maxLength="16"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/continueBtn"
+        android:backgroundTint="@color/black"
+        android:id="@+id/mainBinContinueBtn"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:layout_below="@+id/mainBinTextInputLayout"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginHorizontal="5dp"
         android:layout_marginTop="5dp"
         android:text="Проверить"
