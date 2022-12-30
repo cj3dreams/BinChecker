@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/binFragment">
 
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/binFragment"
         android:name="com.cj3dreams.binchecker.view.ui.BinFragment"
-        android:label="fragment_main"
+        android:label="fragment_bin"
         tools:layout="@layout/fragment_bin" >
         <action
-            android:id="@+id/action_mainFragment_to_historyFragment"
+            android:id="@+id/action_binFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_detailFragment"
+            android:id="@+id/action_binFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
@@ -26,8 +26,8 @@
             android:id="@+id/action_detailFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
         <action
-            android:id="@+id/action_detailFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_detailFragment_to_binFragment"
+            app:destination="@id/binFragment" />
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
@@ -38,7 +38,7 @@
             android:id="@+id/action_historyFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
         <action
-            android:id="@+id/action_historyFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_historyFragment_to_binFragment"
+            app:destination="@id/binFragment" />
     </fragment>
 </navigation>

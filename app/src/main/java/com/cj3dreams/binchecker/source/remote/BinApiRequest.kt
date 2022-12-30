@@ -10,5 +10,5 @@ interface BinApiRequest {
 
     @Headers("Accept-Version: 3")
     @GET("{bin}")
-    suspend fun checkBin(@Path("bin") bin: Int): Response<BinResponseModel>
+    suspend fun checkBin(@Path("bin") bin: Long): Response<BinResponseModel>
 }

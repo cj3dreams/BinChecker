@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class RemoteSourceImpl(private val binApiRequest: BinApiRequest): RemoteSource {
-    override suspend fun checkBin(bin: Int): RequestResult<BinResponseModel> =
+    override suspend fun checkBin(bin: Long): RequestResult<BinResponseModel> =
         withContext(Dispatchers.IO) {
             try {
                 val response = binApiRequest.checkBin(bin)
