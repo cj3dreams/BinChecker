@@ -7,10 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import com.cj3dreams.binchecker.MainActivity
 import com.cj3dreams.binchecker.R
-import com.cj3dreams.binchecker.model.response.BinResponseModel
 import com.cj3dreams.binchecker.vm.BinViewModel
 import kotlinx.android.synthetic.main.fragment_bin.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -38,7 +36,7 @@ class BinFragment : Fragment() {
                 progressDialog.setCanceledOnTouchOutside(true)
                 progressDialog.show()
                 val bin = mainBinTextInputEditText.text.toString().toLong()
-                binViewModel.checkBin(bin)
+                binViewModel.checkBinAndSave(bin)
                 binViewModel.checkBinResponse.observe(viewLifecycleOwner, {
                     if (it != null) {
                         val bundle = Bundle()
