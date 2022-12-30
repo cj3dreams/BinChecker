@@ -2,6 +2,7 @@ package com.cj3dreams.binchecker.view.ui
 
 import android.app.ProgressDialog
 import android.os.Bundle
+import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -47,9 +48,6 @@ class BinFragment : Fragment() {
                                 binViewModel.checkBinResponse.value = null
                                 binViewModel.checkBinResponse.removeObservers(this)
                             }
-                    }
-                    else {
-
                     }
                 })
             }

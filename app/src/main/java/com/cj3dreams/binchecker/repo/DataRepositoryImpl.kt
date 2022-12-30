@@ -7,6 +7,7 @@ import com.cj3dreams.binchecker.source.local.LocalSource
 import com.cj3dreams.binchecker.source.remote.RemoteSource
 import com.cj3dreams.binchecker.source.remote.RequestResult
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 
 class DataRepositoryImpl(
@@ -16,7 +17,7 @@ class DataRepositoryImpl(
     override suspend fun checkBin(bin: Long): RequestResult<BinResponseModel> =
         remoteSource.checkBin(bin)
 
-    override suspend fun getAllBinHistoryFromLocal(): LiveData<List<BinHistoryEntity>> =
+    override suspend fun getAllBinHistoryFromLocal(): Flow<List<BinHistoryEntity>> =
         withContext(Dispatchers.IO) { localSource.getAllBinHistoryFromLocal() }
 
     override suspend fun setBinToLocalHistory(binHistoryEntity: BinHistoryEntity) =

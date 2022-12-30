@@ -26,7 +26,7 @@ class BinViewModel(private val dataRepository: DataRepositoryImpl): ViewModel() 
                     checkBinResponse.postValue(response)
 
                     setBinToLocalHistoryUseCase.invoke(
-                        BinHistoryEntity(0, response.cardNumb, response.brand,
+                        BinHistoryEntity(0, bin, response.brand,
                             when (response.prepaid) { true -> 1 false -> 0 else -> -1 },
                             response.scheme, response.type, response.bank?.city, response.bank?.name,
                             response.bank?.phone, response.bank?.url, response.country?.currency,
